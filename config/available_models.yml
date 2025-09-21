@@ -1,0 +1,9 @@
+# yaml config file containing supported models for the tool
+
+openai: [
+  "gpt-5"
+]
+
+anthropic: [
+  "claude-sonnet-4-0"
+]

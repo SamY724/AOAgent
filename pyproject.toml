@@ -1,0 +1,25 @@
+[project]
+name = "aoagent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=0.68.0",
+    "numpy>=2.3.3",
+    "openai>=1.108.1",
+    "pandas>=2.3.2",
+    "pathlib>=1.0.1",
+    "pydantic-ai>=1.0.9",
+    "pytest>=8.4.2",
+    "python-dotenv>=1.1.1",
+    "pyyaml>=6.0.2",
+    "ruff>=0.13.1",
+]
+
+[project.scripts]
+aoagent = "aoagent:main"
+
+[build-system]
+requires = ["uv_build>=0.8.19, <0.9.0"]
+build-backend = "uv_build"
