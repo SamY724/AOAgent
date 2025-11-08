@@ -17,5 +17,9 @@
     "york": "YRK",
     "edinburgh": "EDB",
     "glasgow": "GLC"
+  },
+  "api": {
+    "base_url": "https://huxley2.azurewebsites.net",
+    "timeout": 10
   }
 }
