@@ -15,7 +15,6 @@ Supports common station codes (LIV, MAN, EUS) or full names (Liverpool Lime Stre
 """
 
 import json
-import os
 from pathlib import Path
 
 import requests
