@@ -25,8 +25,11 @@ API_KEY = os.getenv("OPENWEATHER_API_KEY")
 
 # Load config
 config_path = Path(__file__).parent / "config" / "weather.json"
-with open(config_path) as f:
-    WEATHER_CONFIG = json.load(f)
+try:
+    with open(config_path) as f:
+        WEATHER_CONFIG = json.load(f)
+except (FileNotFoundError, json.JSONDecodeError) as e:
+    raise RuntimeError(f"Failed to load weather configuration: {e}")
 
 
 @weather_mcp.tool()
