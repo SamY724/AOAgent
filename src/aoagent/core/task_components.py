@@ -5,9 +5,11 @@ from typing import get_type_hints, Any
 
 from pydantic import BaseModel, Field
 
-from ..domain.models import SupportedTask
+from enum import Enum
 
-
+class SupportedTask(Enum):
+    RESEARCH = "RESEARCH"
+    PLANNING = "PLANNING"
 class FunctionSignature(BaseModel):
     name: str
     args: list[str]
