@@ -29,10 +29,10 @@ config_path = Path(__file__).parent / "config" / "stations.json"
 try:
     with open(config_path) as f:
         STATION_CONFIG = json.load(f)
-except (FileNotFoundError, json.JSONDecodeError) as e:
-    raise RuntimeError(f"Failed to load station configuration: {e}")
-
-
+except FileNotFoundError:
+    raise RuntimeError(f"Station config file not found at {config_path}. Please ensure 'stations.json' exists and is accessible.")
+except json.JSONDecodeError as e:
+    raise RuntimeError(f"Station config file '{config_path}' is not valid JSON: {e}")
 @train_mcp.tool()
 def get_train_departures(station: str, destination: str = "", num_services: int = 5) -> str:
     """Get live train departure information for a UK station.
