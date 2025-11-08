@@ -1,0 +1,21 @@
+{
+  "stations": {
+    "liverpool": "LIV",
+    "liverpool lime street": "LIV",
+    "manchester": "MAN",
+    "manchester piccadilly": "MAN",
+    "london": "EUS",
+    "london euston": "EUS",
+    "london kings cross": "KGX",
+    "london st pancras": "STP",
+    "london paddington": "PAD",
+    "london victoria": "VIC",
+    "london waterloo": "WAT",
+    "birmingham": "BHM",
+    "birmingham new street": "BHM",
+    "leeds": "LDS",
+    "york": "YRK",
+    "edinburgh": "EDB",
+    "glasgow": "GLC"
+  }
+}
