@@ -112,5 +112,5 @@ def get_weather_forecast(city: str, units: str = "metric") -> str:
 
         return result.strip()
 
-    except requests.RequestException as e:
+    except (requests.RequestException, KeyError, IndexError) as e:
         return f"Error fetching forecast data: {str(e)}"
