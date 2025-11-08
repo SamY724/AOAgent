@@ -48,6 +48,10 @@ def get_current_weather(city: str, units: str = "metric") -> str:
     """
     if not API_KEY:
         return "Weather API key not configured. Please set OPENWEATHER_API_KEY."
+    
+    valid_units = ["metric", "imperial", "kelvin"]
+    if units not in valid_units:
+        return f"Invalid units '{units}'. Must be one of: {', '.join(valid_units)}"
 
     try:
         response = requests.get(
@@ -89,6 +93,10 @@ def get_weather_forecast(city: str, units: str = "metric") -> str:
     """
     if not API_KEY:
         return "Weather API key not configured. Please set OPENWEATHER_API_KEY."
+    
+    valid_units = ["metric", "imperial", "kelvin"]
+    if units not in valid_units:
+        return f"Invalid units '{units}'. Must be one of: {', '.join(valid_units)}"
 
     try:
         response = requests.get(
