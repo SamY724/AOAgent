@@ -66,24 +66,24 @@ def register_function(func):
 
 @register_function
 def upload_to_notion():
-    raise NotImplementedError
+    raise NotImplementedError("upload_to_notion functionality is not yet implemented")
 
 
 @register_function
 def send_email():
-    raise NotImplementedError
+    raise NotImplementedError("send_email functionality is not yet implemented")
 
 @register_function
 def scrape():
-    raise NotImplementedError
+    raise NotImplementedError("scrape functionality is not yet implemented")
 
 @register_function
 def planning():
-    raise NotImplementedError
+    raise NotImplementedError("planning functionality is not yet implemented")
 
 @register_function
 def analyse():
-    raise NotImplementedError
+    raise NotImplementedError("analyse functionality is not yet implemented")
 
 
 # mapping for setting component graphs to supported tasks.
