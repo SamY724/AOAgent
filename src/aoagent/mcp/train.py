@@ -25,6 +25,14 @@ train_mcp = FastMCP("UKTrains")
 
 BASE_URL = "https://huxley2.azurewebsites.net"
 
+# Load general config
+general_config_path = Path(__file__).parent / "config" / "general.json"
+try:
+    with open(general_config_path) as f:
+        GENERAL_CONFIG = json.load(f)
+except (FileNotFoundError, json.JSONDecodeError) as e:
+    raise RuntimeError(f"Failed to load general configuration: {e}")
+
 # Load station mappings from config
 config_path = Path(__file__).parent / "config" / "stations.json"
 with open(config_path) as f:
@@ -55,7 +63,7 @@ def get_train_departures(station: str, destination: str = "", num_services: int 
         if destination:
             params["filterCrs"] = _get_station_code(destination)
 
-        response = requests.get(url, params=params, timeout=10)
+        response = requests.get(url, params=params, timeout=GENERAL_CONFIG['api']['timeout'])
         response.raise_for_status()
         data = response.json()
 
@@ -108,7 +116,7 @@ def get_train_journey(origin: str, destination: str, num_services: int = 3) -> s
         url = f"{BASE_URL}/departures/{origin_code}/to/{dest_code}"
         params = {"numServices": num_services}
 
-        response = requests.get(url, params=params, timeout=10)
+        response = requests.get(url, params=params, timeout=GENERAL_CONFIG['api']['timeout'])
         response.raise_for_status()
         data = response.json()
 
