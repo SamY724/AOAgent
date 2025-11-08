@@ -27,8 +27,11 @@ BASE_URL = "https://huxley2.azurewebsites.net"
 
 # Load station mappings from config
 config_path = Path(__file__).parent / "config" / "stations.json"
-with open(config_path) as f:
-    STATION_CONFIG = json.load(f)
+try:
+    with open(config_path) as f:
+        STATION_CONFIG = json.load(f)
+except (FileNotFoundError, json.JSONDecodeError) as e:
+    raise RuntimeError(f"Failed to load station configuration: {e}")
 
 
 @train_mcp.tool()
