@@ -1,0 +1,6 @@
+{
+  "api": {
+    "timeout": 10,
+    "description": "Default timeout in seconds for API requests"
+  }
+}

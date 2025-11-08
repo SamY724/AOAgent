@@ -1,0 +1,23 @@
+{
+  "units": {
+    "metric": {
+      "temperature": "C",
+      "speed": "m/s",
+      "description": "Celsius and meters per second"
+    },
+    "imperial": {
+      "temperature": "F",
+      "speed": "mph",
+      "description": "Fahrenheit and miles per hour"
+    },
+    "kelvin": {
+      "temperature": "K",
+      "speed": "m/s",
+      "description": "Kelvin and meters per second"
+    }
+  },
+  "api": {
+    "base_url": "https://api.openweathermap.org/data/2.5",
+    "timeout": 10
+  }
+}
